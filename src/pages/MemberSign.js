@@ -1,17 +1,22 @@
 import React, { useState } from "react";
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { SafeAreaView, StyleSheet, Alert } from 'react-native';
 
 import Input from '../components/Input';
 import Button from '../components/Button';
 
 const MemberSign = () => {
 
-    const [userName, setUserName] = useState('');
-    const [userSurname, setUserSurname] = useState('');
-    const [userAge, setUserAge] = useState('');
-    const [userMail, setUserMail] = useState('');
+    const [userName, setUserName] = useState(null);
+    const [userSurname, setUserSurname] = useState(null);
+    const [userAge, setUserAge] = useState(null);
+    const [userMail, setUserMail] = useState(null);
 
     const handleSubmit = () => {
+
+        if (!userName || !userSurname || !userAge || !userMail) {
+            Alert.alert('XYZ Fitness Salonu', 'Herhangi bir alan boş bırakılamaz.');
+        }
+
         const user = {
             userName,
             userSurname,
