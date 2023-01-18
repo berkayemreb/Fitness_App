@@ -4,7 +4,7 @@ import { SafeAreaView, StyleSheet, Alert } from 'react-native';
 import Input from '../components/Input';
 import Button from '../components/Button';
 
-const MemberSign = () => {
+const MemberSign = ({ navigation }) => {
 
     const [userName, setUserName] = useState(null);
     const [userSurname, setUserSurname] = useState(null);
@@ -14,7 +14,7 @@ const MemberSign = () => {
     const handleSubmit = () => {
 
         if (!userName || !userSurname || !userAge || !userMail) {
-            Alert.alert('XYZ Fitness Salonu', 'Herhangi bir alan boş bırakılamaz.');
+            return Alert.alert('XYZ Fitness Salonu', 'Herhangi bir alan boş bırakılamaz.');
         }
 
         const user = {
@@ -24,7 +24,8 @@ const MemberSign = () => {
             userMail,
         }
         // userName: userName , userAge: userAge şeklinde teker teker yapmak yerine bu şekilde aynı isimleriyle yeni bir obje oluşturmuş oluyor(ES6 ile gelen kolaylık)
-        console.log(user);
+
+        navigation.navigate('MemberResult');
     }
 
     return (

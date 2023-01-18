@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Welcome from './pages/Welcome';
 import MemberSign from './pages/MemberSign';
+import MemberResult from './pages/MemberResult';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,10 @@ export default function Router() {
         <Stack.Screen
           name='MemberSign'
           component={MemberSign} />
+        <Stack.Screen
+          name='MemberResult'
+          component={MemberResult}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
