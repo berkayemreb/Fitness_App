@@ -6,7 +6,7 @@ const MemberSign = () => {
     return (
         <SafeAreaView>
             <Text>MemberSign a hosgeldin</Text>
-            <Input />
+            <Input label='Üye Adı' />
         </SafeAreaView>
     )
 }
