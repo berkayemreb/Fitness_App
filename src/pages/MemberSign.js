@@ -25,7 +25,7 @@ const MemberSign = ({ navigation }) => {
         }
         // userName: userName , userAge: userAge şeklinde teker teker yapmak yerine bu şekilde aynı isimleriyle yeni bir obje oluşturmuş oluyor(ES6 ile gelen kolaylık)
 
-        navigation.navigate('MemberResult');
+        navigation.navigate('MemberResult', { user });
     }
 
     return (
